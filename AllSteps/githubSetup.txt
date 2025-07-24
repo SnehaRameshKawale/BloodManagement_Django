@@ -69,3 +69,11 @@ Run these in your terminal (from your project root):
 git add .
 git commit -m "Describe what you changed here"
 git push
+
+#####################################################################
+Steps:
+1st Models
+2nd Signals
+3rd Template
+4th View (midd between template and models)
+5th urls and all 
