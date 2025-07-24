@@ -1,0 +1,71 @@
+ 1. Initialize Git (Only Once)
+Go to your project root directory (where manage.py is):
+
+cd D:\Django\bloodManagement
+git init
+✅ 2. Create .gitignore File
+Create a file named .gitignore (if not already present) and add:
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Django
+*.db
+*.sqlite3
+db.sqlite3
+*.pyc
+
+# Environments
+.env
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+This ensures you don’t upload unwanted files like database or system files.
+
+✅ 3. Create a GitHub Repo
+Go to https://github.com
+
+Click New Repository
+
+Give it a name like blood-management
+
+DO NOT initialize with README or .gitignore
+
+Click Create repository
+
+✅ 4. Connect Local Git to GitHub
+After creating the repo, GitHub will give you a command — copy it.
+
+In your terminal (in project folder):
+
+git remote add origin https://github.com/your-username/blood-management.git
+Replace your-username with your actual GitHub username.
+
+✅ 5. Stage and Commit Your Code
+
+git add .
+git commit -m "Initial commit: Blood management system"
+✅ 6. Push to GitHub
+If it's a new empty repo, force push:
+
+git branch -M main
+git push -u origin main
+✅ You’re Done!
+Now check your GitHub — your full project will be visible there.
+
+################################################################################
+✅ Commands to Run After Making Changes
+Run these in your terminal (from your project root):
+
+git add .
+git commit -m "Describe what you changed here"
+git push
