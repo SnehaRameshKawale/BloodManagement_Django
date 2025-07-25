@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if is_signup %}Signup{% else %}Login{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'bloodBank/style.css' %}">
+</head>
+
+<body class="form">
+    <div class="form_border">
+        <div class="heading">{% if is_signup %}Signup Form{% else %}Login Form{% endif %}</div>
+        <div class="bt">
+            <a href="{% url 'home' %}" class="btn">Login</a>
+            <a href="{% url 'signup' %}" class="btn">Signup</a>
+        </div>
+        <!-- form start here -->
+        <form method="POST" action="{% if is_signup %}{% url 'signup' %}{% else %}{% url 'home' %}{% endif %}">
+            {% csrf_token %}
+            <div class="inputDiv">
+                {% if is_signup %}
+                <input type="text" placeholder="name">
+                <br>
+                <input type="text" placeholder="phone number">
+                <br>
+                <input type="email" placeholder="email">
+                {% else %}
+                <input type="text" placeholder="name">
+                <br>
+                <input type="text" placeholder="phone number">
+                {% endif %}
+            </div>
+            <div class="bt">
+                <button type="submit">{% if is_signup %}Signup{% else %}Login{% endif %}</button>
+            </div>
+        </form>
+        
+        {% if is_signup %}
+            <span>Already a member? <a href="{% url 'home' %}">Login now</a></span>
+        {% else %}
+            <span>Not a member? <a href="{% url 'signup' %}">Signup now</a></span>
+        {% endif %}
+        
+    </div>
+</body>
+
+</html>
